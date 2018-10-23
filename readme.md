@@ -6,6 +6,7 @@ Crud básico com Laravel framework e mongodb que é um banco de dados orientado 
 
 - Laravel Framework 5.7.9
 - Mongodb v3.6.3
+- Jenssegers/mongodb 3.4 [A MongoDB based Eloquent model and Query builder for Laravel]
 
 ## Configuração
 

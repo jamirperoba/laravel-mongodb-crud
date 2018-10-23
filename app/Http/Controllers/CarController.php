@@ -36,6 +36,11 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'carcompany' => 'required|min:2',
+            'model' => 'required|min:2',
+            'price' => 'required|min:2|integer',
+        ]);
         $car = new Car();
         $car->carcompany = $request->get('carcompany');
         $car->model = $request->get('model');
@@ -76,8 +81,12 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo "ok";
-        exit;
+        $this->validate($request, [
+            'carcompany' => 'required|min:2',
+            'model' => 'required|min:2',
+            'price' => 'required|min:2|integer',
+        ]);
+
         $car= Car::find($id);
         $car->carcompany = $request->get('carcompany');
         $car->model = $request->get('model');

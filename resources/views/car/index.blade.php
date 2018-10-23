@@ -8,6 +8,7 @@
 <body>
 <div class="container">
     <br />
+    <h2 class="text-center">CRUD de carros Laravel+mongodb</h2><br/>
     @if (\Session::has('success'))
         <div class="alert alert-success">
             <p>{{ \Session::get('success') }}</p>

@@ -13,14 +13,19 @@
             <p>{{ \Session::get('success') }}</p>
         </div><br />
     @endif
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a href="{{route('car.create')}}" class="btn btn-info">Adicionar novo carro</a>
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Company</th>
-            <th>Model</th>
-            <th>Price</th>
-            <th colspan="2">Action</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Valor</th>
+            <th colspan="2">Ações</th>
         </tr>
         </thead>
         <tbody>
@@ -31,12 +36,12 @@
                 <td>{{$car->carcompany}}</td>
                 <td>{{$car->model}}</td>
                 <td>{{$car->price}}</td>
-                <td><a href="{{action('CarController@edit', $car->id)}}" class="btn btn-warning">Edit</a></td>
+                <td><a href="{{action('CarController@edit', $car->id)}}" class="btn btn-warning">Editar</a></td>
                 <td>
                     <form action="{{action('CarController@destroy', $car->id)}}" method="post">
                         @csrf
                         <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Excluir</button>
                     </form>
                 </td>
             </tr>

@@ -2,17 +2,15 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-// inserindo eloquent mongo db
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class User extends Eloquent
+class User extends Eloquent  implements Authenticatable
 {
+    use AuthenticableTrait;
     protected $connection = 'mongodb';
     protected $collection = 'users';
-    protected $primaryKey = 'id';
-
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

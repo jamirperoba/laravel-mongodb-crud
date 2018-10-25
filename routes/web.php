@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', 'CarController@index');
+Auth::routes();
 
-Route::resource('car','CarController');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/', 'CarController@index');
+    Route::resource('car', 'CarController');
+});

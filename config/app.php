@@ -148,6 +148,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 //        Provider mongodb Jenssegers
         Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
+        Jenssegers\Mongodb\MongodbQueueServiceProvider::class,
 
         /*
          * Package Service Providers...
